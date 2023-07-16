@@ -89,16 +89,17 @@
                 ? 'bg-red-600'
                 : 'bg-gray-600'} "
             >
-            {#if message.content }
-              <div class="prose max-w-none !text-white prose-strong:!text-white prose-li:!text-white prose-ol:!text-white prose-ul-marker:!text-white prose-ul:!text-white prose-a:!text-blue-100">
-                <SvelteMarkdown source={message.content} />
-              </div>
-            {/if}
+          
             {#if message.function != null}
-            <div class="mt-2">
+            <div class="mb-2">
               <svelte:component this={componentFor(message.function)} data={message.results} />
             </div>
             {/if}
+            {#if message.content }
+            <div class="prose max-w-none !text-white prose-strong:!text-white prose-li:!text-white prose-ol:!text-white prose-ul-marker:!text-white prose-ul:!text-white prose-a:!text-blue-100">
+              <SvelteMarkdown source={message.content} />
+            </div>
+          {/if}
             </span>
           </div>
         {/each}
