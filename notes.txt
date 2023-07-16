@@ -1,0 +1,58 @@
+Founder: Vaik
+Concept: Increase forcasting 
+
+
+Finance background: Oil & Gas - logistics for 7-8 years
+France: 
+
+Next Year: In June - business stratergy in middle east & africa
+Understand how business operates on
+
+- 
+
+Idea:
+
+Supply chain manager - shipping
+
+Stakeholders:
+
+- Shippers (anyone looking to shipping cargo)
+- Freight for orders (buy spaces on vessel - retailer of transporation)
+- Vessel owners (shipping companies - CNCN) - main goal to operate at full capacity 
+
+
+Shipping lines - main concern being as full or optimal as possible 
+
+Shipping lines plan demand by:
+
+- Directly via Shippers
+- Indirectly via Vessel owners
+
+Cost vs transit time...
+
+Issues With This Process
+
+- In house model to forcast demand. 
+- Very paper and pencil and email (phone calls) **** important
+- If operating at loss either take the hit or cancel 
+
+If Cancel:
+- Short window of time means rerouting (has a cost)
+
+If Send anyway:
+- Trip could have been avioded anyway
+- Adds to the carbon footprint (green environmental)
+
+
+Solution:
+
+- Levarge predictive AI and machine learning
+- Historical and real time learning ()
+- 
+
+Questions:
+
+- What data points are there
+- What compertition are there 
+- Data is at several layers (shippers, )
+- Carbon footprint and route planning (maybe additional)
