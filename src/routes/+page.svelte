@@ -84,27 +84,22 @@
     >
       <div class="bg-gray-200 p-2 border-b-[1px]">
         <p class="text-xs text-red-700">
-        <strong class="mr-2 p-2">
-          <i class="fas fa-fire" />
-          POPULAR:
-        </strong>
+          <strong class="mr-2 p-2">
+            <i class="fas fa-fire" />
+            POPULAR:
+          </strong>
         </p>
 
         <p class="text-xs text-red-700 p-2">
-     
-
           <button
-          class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
-          on:click={ask(
-            "Teach me some singlish"
-          )}
-        >
-          <i class="fas fa-comment" />
-          Teach me singlish
-        </button>
-
-          
-      
+            class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
+            on:click={ask(
+              "Give me a singlish test, ask mutli choice questions. One at a time and rate my answers"
+            )}
+          >
+            <i class="fas fa-comment" />
+            Test my singlish
+          </button>
 
           <button
             class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
@@ -119,36 +114,20 @@
             on:click={ask("Im hungry, suggest me some good local food ")}
           >
             <i class="fas fa-comment" />
-           Good food in SG
+            Good food in SG
           </button>
 
-          <button
-          class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
-          on:click={ask("What is the history of singapore ")}
-        >
-          <i class="fas fa-comment" />
-          Tell SG history
-        </button>
+        
 
-        <button
+          <button
             class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
             on:click={ask(
-              "Give me a singlish test, ask mutli choice questions. One at a time and rate my answers"
+              "What to do in singapore, suggest me some good places to visit while I am here (with links)"
             )}
           >
             <i class="fas fa-comment" />
-            Test my singlish
+            What to do in SG
           </button>
-
-
-        <button
-        class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
-        on:click={ask("What to do in singapore, suggest me some good places to visit while I am here (with links)")}
-      >
-        <i class="fas fa-comment" />
-        What to do in SG
-      </button>
-
         </p>
       </div>
       <div
