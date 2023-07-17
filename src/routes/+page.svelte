@@ -67,19 +67,19 @@
     class=" h-full lg:py-[50px] lg:w-[1000px] drop-shadow-lg m-auto flex flex-col"
   >
     <div
-      class="flex-1 w-full overflow-hidden
+      class="flex-1 w-full overflow-auto
       flex 
       justify-end
       items-end
       rounded-t-lg
       bg-white
       flex-col
-      m-auto h-full"
+      m-auto "
 
     >
       <div class="w-full 
       
-      flex h-full justify-end items-end flex-col
+       h-full justify-end items-end flex-col
       p-4 overflow-auto flex-1 " id="messages">
         <!-- {#each [0,1,2,3,4,5] as message} -->
         {#each messages as message}
