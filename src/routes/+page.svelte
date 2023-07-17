@@ -5,8 +5,8 @@
   import { onMount } from "svelte";
   import SvelteMarkdown from "svelte-markdown";
   import ListEvents from "$lib/components/functions/ListEvents.svelte";
-  import { v4 as uuidv4 } from 'uuid';
-  
+  import { v4 as uuidv4 } from "uuid";
+
   let channel: Channel;
   let input = "";
   let innerWidth = 0;
@@ -29,13 +29,18 @@
   }
 
   function onKeyDown(e: KeyboardEvent): void {
-    if (e.code === "Enter" || e.keyCode===13) {
+    if (e.code === "Enter" || e.keyCode === 13) {
       send();
     }
   }
 
+  let ask = (msg: string) => () => {
+    input = msg;
+    send();
+  };
+
   function send(): void {
-    if(input == "") return
+    if (input == "") return;
 
     loading = true;
     channel.push("message:client:send", { message: input });
@@ -54,13 +59,14 @@
     let el = document.getElementById("messages");
     setTimeout(() => {
       el?.scrollTo(0, el.scrollHeight);
-      if(innerWidth > 768) {
+      if (innerWidth > 768) {
         document.getElementById("input")?.focus();
       }
     }, 100);
   }
 </script>
-<svelte:window bind:innerWidth={innerWidth} />
+
+<svelte:window bind:innerWidth />
 
 <div class=" h-full bg-[#98CBCC] bg-[url('/img/bnr.png')] bg-cover">
   <!-- HERO -->
@@ -68,21 +74,84 @@
     class=" h-full lg:py-[50px] lg:w-[1000px] drop-shadow-lg m-auto flex flex-col"
   >
     <div
-      class="flex-1 w-full 
-      flex 
-      justify-end
-      items-end
-      rounded-t-lg
+      class="flex-1 w-full
+      flex
+    
+      md:rounded-t-lg
       bg-white
       flex-col
       overflow-hidden
-      m-auto "
-
+      m-auto"
     >
-      <div class="w-full 
+      <div class="bg-gray-200 p-2 border-b-[1px]">
+        <p class="text-xs text-red-700">
+        <strong class="mr-2 p-2">
+          <i class="fas fa-fire" />
+          POPULAR:
+        </strong>
+        </p>
+
+        <p class="text-xs text-red-700 p-2">
+     
+          <button
+            class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
+            on:click={ask(
+              "Give me a singlish test, ask mutli choice questions. One at a time and rate my answers"
+            )}
+          >
+            <i class="fas fa-comment" />
+            Test my singlish
+          </button>
+
+          <button
+            class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
+            on:click={ask("Whats happening in SG now?")}
+          >
+            <i class="fas fa-comment" />
+            Events in SG
+          </button>
+
+          <button
+            class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
+            on:click={ask("Tell me a joke")}
+          >
+            <i class="fas fa-comment" />
+            Tell me a joke
+          </button>
+
+          <button
+            class="bg-red-600 text-white p-2 rounded-lg mr-2 my-2"
+            on:click={ask("Im hungry, suggest me some good local food ")}
+          >
+            <i class="fas fa-comment" />
+           Good food in SG
+          </button>
+
+          <button
+          class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
+          on:click={ask("What is the history of singapore ")}
+        >
+          <i class="fas fa-comment" />
+          Tell SG history
+        </button>
+
+        <button
+        class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
+        on:click={ask("What to do in singapore, suggest me some good places to visit while I am here (with links)")}
+      >
+        <i class="fas fa-comment" />
+        What to do in SG
+      </button>
+
+        </p>
+      </div>
+      <div
+        class="w-full
       
        h-full justify-end items-end flex-col
-      p-4 overflow-auto flex-1 " id="messages">
+      p-4 overflow-auto flex-1"
+        id="messages"
+      >
         <!-- {#each [0,1,2,3,4,5] as message} -->
         {#each messages as message}
           <div
@@ -144,7 +213,7 @@
       </div>
     </div>
     <div class="flex flex-row justify-center flex bg-red-700 rounded-b-md">
-      <div class="p-2 flex-1 ">
+      <div class="p-2 flex-1">
         <Input
           id="input"
           bind:value={input}
@@ -153,17 +222,14 @@
           placeholder="Ask auntie a question i.e. test my singlish or suggest food"
           on:keydown={onKeyDown}
         />
-       
       </div>
       <div>
         <button
-          class="bg-white text-red-700  rounded-md  border p-2 px-6 my-2 mr-2 disabled:opacity-50"
+          class="bg-white text-red-700 rounded-md border p-2 px-6 my-2 mr-2 disabled:opacity-50"
           on:click={send}
-          disabled={loading }
-        ><i class="fas fa-paper-plane" /></button>
+          disabled={loading}><i class="fas fa-paper-plane" /></button
+        >
       </div>
     </div>
   </div>
 </div>
-
-
