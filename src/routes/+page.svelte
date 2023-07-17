@@ -91,6 +91,14 @@
         </p>
 
         <p class="text-xs text-red-700 p-2">
+
+          <button
+            class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
+            on:click={ask("Tell me a joke")}
+          >
+            <i class="fas fa-comment" />
+            Tell me a joke
+          </button>
           <button
             class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
             on:click={ask(
@@ -101,13 +109,6 @@
             Test my singlish
           </button>
 
-          <button
-            class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
-            on:click={ask("Tell me a joke")}
-          >
-            <i class="fas fa-comment" />
-            Tell me a joke
-          </button>
 
           <button
             class="bg-red-600 text-white p-2 rounded-lg mr-2 my-2"
@@ -117,7 +118,6 @@
             Good food in SG
           </button>
 
-        
 
           <button
             class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
