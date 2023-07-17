@@ -82,7 +82,7 @@
       overflow-hidden
       m-auto"
     >
-      <div class="bg-gray-200 p-2 border-b-[1px]">
+      <div class="bg-gray-100 drop-shadow-sm p-2 border-b-[1px]">
         <p class="text-xs text-red-700">
           <strong class="mr-2 p-2">
             <i class="fas fa-fire" />
@@ -118,7 +118,6 @@
             Good food in SG
           </button>
 
-
           <button
             class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
             on:click={ask(
@@ -128,6 +127,18 @@
             <i class="fas fa-comment" />
             What to do in SG
           </button>
+
+
+          <button
+          class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
+          on:click={ask(
+            "Hey you damn Chio-bu "
+          )}
+        >
+          <i class="fas fa-comment" />
+          Compliment me
+        </button>
+
         </p>
       </div>
       <div
@@ -178,7 +189,6 @@
           </div>
         {/each}
         <!-- {/each} -->
-
         {#if loading}
           <div class="flex w-full flex-row mb-3">
             <div class="flex-shrink-0">
