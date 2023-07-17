@@ -150,7 +150,7 @@
           bind:value={input}
           type="text"
           disabled={loading}
-          placeholder="Ask a question"
+          placeholder="Ask auntie a question i.e. test my singlish or suggest food"
           on:keydown={onKeyDown}
         />
        
