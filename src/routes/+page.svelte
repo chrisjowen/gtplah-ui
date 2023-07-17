@@ -27,7 +27,7 @@
   }
 
   function onKeyDown(e: KeyboardEvent): void {
-    if (e.code === "Enter") {
+    if (e.code === "Enter" || e.keyCode===13) {
       send();
     }
   }
