@@ -75,6 +75,7 @@
       rounded-t-lg
       bg-white
       flex-col
+      overflow-hidden
       m-auto "
 
     >
