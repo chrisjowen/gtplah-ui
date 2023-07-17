@@ -147,17 +147,17 @@
             {#if message.sender == "server"}
               <div class="flex-shrink-0">
                 <img
-                  class="w-[40px] w-[40px] rounded-full"
+                  class="w-[40px] w-[40px] rounded-full mr-2"
                   src="/img/auntie.png"
                   alt="you"
                 />
               </div>
             {/if}
             <span
-              class="b-2 border md:max-w-[75%] max-w-[95%] p-4 rounded-md {message.sender ==
+              class="b-2  md:max-w-[75%] max-w-[95%] p-4 rounded-md {message.sender ==
               'server'
-                ? 'bg-red-600'
-                : 'bg-gray-600'} "
+                ? 'bg-red-100 '
+                : 'bg-gray-200'} "
             >
               {#if message.function != null}
                 <div class="mb-2">
@@ -169,7 +169,7 @@
               {/if}
               {#if message.content}
                 <div
-                  class="prose max-w-none !text-white prose-strong:!text-white prose-li:!text-white prose-ol:!text-white prose-ul-marker:!text-white prose-ul:!text-white prose-a:!text-blue-100"
+                  class="prose max-w-none prose-a:!text-blue-100"
                 >
                   <SvelteMarkdown source={message.content} />
                 </div>
@@ -183,13 +183,13 @@
           <div class="flex w-full flex-row mb-3">
             <div class="flex-shrink-0">
               <img
-                class="w-[40px] w-[40px] rounded-full"
+                class="w-[40px] w-[40px] rounded-full mr-2"
                 src="/img/auntie.png"
                 alt="you"
               />
             </div>
-            <span class="b-2 border max-w-[50%] p-4 rounded-md bg-red-600">
-              <div class="prose max-w-none !text-white">
+            <span class="b-2  max-w-[50%] p-4 rounded-md bg-red-100">
+              <div class="prose max-w-none">
                 <i class="fas fa-spinner animate-spin" />
               </div>
             </span>
