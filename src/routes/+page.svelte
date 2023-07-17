@@ -180,7 +180,7 @@
               {/if}
               {#if message.content}
                 <div
-                  class="prose max-w-none prose-a:!text-blue-100"
+                  class="prose max-w-none prose-a:!text-blue-700 prose-a:underline"
                 >
                   <SvelteMarkdown source={message.content} />
                 </div>
