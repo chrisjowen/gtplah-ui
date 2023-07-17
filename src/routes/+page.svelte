@@ -5,7 +5,8 @@
   import { onMount } from "svelte";
   import SvelteMarkdown from "svelte-markdown";
   import ListEvents from "$lib/components/functions/ListEvents.svelte";
-
+  import { v4 as uuidv4 } from 'uuid';
+  
   let channel: Channel;
   let input = "";
   let innerWidth = 0;
@@ -18,7 +19,7 @@
   ];
 
   onMount(async () => {
-    let userId = 1;
+    let userId = uuidv4();
     channel = await connect(`user:${userId}`, "empty");
     channel.on("message:server:send", onMessageRecieved);
   });
