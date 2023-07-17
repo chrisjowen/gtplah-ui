@@ -67,7 +67,7 @@
     class=" h-full lg:py-[50px] lg:w-[1000px] drop-shadow-lg m-auto flex flex-col"
   >
     <div
-      class="flex-1 w-full overflow-auto
+      class="flex-1 w-full 
       flex 
       justify-end
       items-end
@@ -98,7 +98,7 @@
               </div>
             {/if}
             <span
-              class="b-2 border max-w-[75%] p-4 rounded-md {message.sender ==
+              class="b-2 border md:max-w-[75%] max-w-[95%] p-4 rounded-md {message.sender ==
               'server'
                 ? 'bg-red-600'
                 : 'bg-gray-600'} "
