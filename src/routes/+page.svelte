@@ -28,12 +28,18 @@
 
   function onKeyDown(e: KeyboardEvent): void {
     if (e.code === "Enter") {
-      loading = true;
-      channel.push("message:client:send", { message: input });
-      messages = messages.concat({ content: input, sender: "me" });
-      input = "";
-      scrollBottom();
+      send();
     }
+  }
+
+  function send(): void {
+    if(input == "") return
+
+    loading = true;
+    channel.push("message:client:send", { message: input });
+    messages = messages.concat({ content: input, sender: "me" });
+    input = "";
+    scrollBottom();
   }
 
   function onMessageRecieved(msg: any) {
@@ -57,16 +63,15 @@
     class=" h-full lg:py-[50px] lg:w-[1000px] drop-shadow-lg m-auto flex flex-col"
   >
     <div
-      class="flex-1 w-full overflow-hidden 
-      flex justify-end 
-      items-end 
-      rounded-t-lg 
-      bg-white 
-      flex-col 
+      class="flex-1 w-full overflow-hidden
+      flex justify-end
+      items-end
+      rounded-t-lg
+      bg-white
+      flex-col
       m-auto h-full"
     >
       <div class="w-full p-4 overflow-auto flex-1" id="messages">
-
         <!-- {#each [0,1,2,3,4,5] as message} -->
         {#each messages as message}
           <div
@@ -89,17 +94,21 @@
                 ? 'bg-red-600'
                 : 'bg-gray-600'} "
             >
-          
-            {#if message.function != null}
-            <div class="mb-2">
-              <svelte:component this={componentFor(message.function)} data={message.results} />
-            </div>
-            {/if}
-            {#if message.content }
-            <div class="prose max-w-none !text-white prose-strong:!text-white prose-li:!text-white prose-ol:!text-white prose-ul-marker:!text-white prose-ul:!text-white prose-a:!text-blue-100">
-              <SvelteMarkdown source={message.content} />
-            </div>
-          {/if}
+              {#if message.function != null}
+                <div class="mb-2">
+                  <svelte:component
+                    this={componentFor(message.function)}
+                    data={message.results}
+                  />
+                </div>
+              {/if}
+              {#if message.content}
+                <div
+                  class="prose max-w-none !text-white prose-strong:!text-white prose-li:!text-white prose-ol:!text-white prose-ul-marker:!text-white prose-ul:!text-white prose-a:!text-blue-100"
+                >
+                  <SvelteMarkdown source={message.content} />
+                </div>
+              {/if}
             </span>
           </div>
         {/each}
@@ -123,8 +132,8 @@
         {/if}
       </div>
     </div>
-    <div class="flex flex-row justify-center flex">
-      <div class="w-full p-4 bg-red-700 rounded-b-md">
+    <div class="flex flex-row justify-center flex bg-red-700 rounded-b-md">
+      <div class="p-2 flex-1 ">
         <Input
           id="input"
           bind:value={input}
@@ -133,7 +142,17 @@
           placeholder="Ask a question"
           on:keydown={onKeyDown}
         />
+       
+      </div>
+      <div>
+        <button
+          class="bg-white text-red-700  rounded-md  border p-2 px-6 my-2 mr-2 disabled:opacity-50"
+          on:click={send}
+          disabled={loading }
+        ><i class="fas fa-paper-plane" /></button>
       </div>
     </div>
   </div>
 </div>
+
+
