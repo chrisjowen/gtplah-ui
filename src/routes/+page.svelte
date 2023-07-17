@@ -76,7 +76,6 @@
     <div
       class="flex-1 w-full
       flex
-    
       md:rounded-t-lg
       bg-white
       flex-col
@@ -93,23 +92,19 @@
 
         <p class="text-xs text-red-700 p-2">
      
-          <button
-            class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
-            on:click={ask(
-              "Give me a singlish test, ask mutli choice questions. One at a time and rate my answers"
-            )}
-          >
-            <i class="fas fa-comment" />
-            Test my singlish
-          </button>
 
           <button
-            class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
-            on:click={ask("Whats happening in SG now?")}
-          >
-            <i class="fas fa-comment" />
-            Events in SG
-          </button>
+          class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
+          on:click={ask(
+            "Teach me some singlish"
+          )}
+        >
+          <i class="fas fa-comment" />
+          Teach me singlish
+        </button>
+
+          
+      
 
           <button
             class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
@@ -134,6 +129,17 @@
           <i class="fas fa-comment" />
           Tell SG history
         </button>
+
+        <button
+            class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
+            on:click={ask(
+              "Give me a singlish test, ask mutli choice questions. One at a time and rate my answers"
+            )}
+          >
+            <i class="fas fa-comment" />
+            Test my singlish
+          </button>
+
 
         <button
         class="bg-red-600 text-white p-2 rounded-lg mr-2 mb-2"
