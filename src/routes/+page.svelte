@@ -8,6 +8,7 @@
 
   let channel: Channel;
   let input = "";
+  let innerWidth = 0;
   let loading = false;
   let messages = [
     {
@@ -52,10 +53,13 @@
     let el = document.getElementById("messages");
     setTimeout(() => {
       el?.scrollTo(0, el.scrollHeight);
-      document.getElementById("input")?.focus();
+      if(innerWidth > 768) {
+        document.getElementById("input")?.focus();
+      }
     }, 100);
   }
 </script>
+<svelte:window bind:innerWidth={innerWidth} />
 
 <div class=" h-full bg-[#98CBCC] bg-[url('/img/bnr.png')] bg-cover">
   <!-- HERO -->
@@ -64,14 +68,19 @@
   >
     <div
       class="flex-1 w-full overflow-hidden
-      flex justify-end
+      flex 
+      justify-end
       items-end
       rounded-t-lg
       bg-white
       flex-col
       m-auto h-full"
+
     >
-      <div class="w-full p-4 overflow-auto flex-1" id="messages">
+      <div class="w-full 
+      
+      flex h-full justify-end items-end flex-col
+      p-4 overflow-auto flex-1 " id="messages">
         <!-- {#each [0,1,2,3,4,5] as message} -->
         {#each messages as message}
           <div
